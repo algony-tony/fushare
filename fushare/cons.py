@@ -53,6 +53,11 @@ CZCE_DAILY_URL_1 = 'http://www.czce.com.cn/cn/exchange/jyxx/hq/hq%s.html'
 CZCE_DAILY_URL_2 = 'http://www.czce.com.cn/cn/exchange/%s/datadaily/%s.txt'
 CZCE_DAILY_URL_3 = 'http://www.czce.com.cn/cn/DFSStaticFiles/Future/%s/%s/FutureDataDaily.txt'
 
+CFFEX_WEEKLY_URL = 'http://www.cffex.com.cn/sj/hqsj/ztj/%s/%s/%s_1.csv'
+SHFE_WEEKLY_URL = 'http://www.shfe.com.cn/data/dailydata/%s.dat'
+DCE_WEEKLY_URL = 'http://www.dce.com.cn/publicweb/quotesdata/weekQuotesCh.html'
+CZCE_WEEKLY_URL_3 = 'http://www.czce.com.cn/cn/DFSStaticFiles/Future/%s/%s/FutureDataWeek.txt'
+
 
 DATE_PATTERN = re.compile(r'^([0-9]{4})[-/]?([0-9]{2})[-/]?([0-9]{2})')
 FUTURE_SYMBOL_PATTERN = re.compile(r'(^[A-Za-z]{1,2})[0-9]+')
@@ -61,13 +66,21 @@ FUTURE_SYMBOL_PATTERN = re.compile(r'(^[A-Za-z]{1,2})[0-9]+')
 CFFEX_COLUMNS = ['open','high','low','volume','turnover','open_interest','close','settle','change1','change2']
 CZCE_COLUMNS = ['pre_settle','open','high','low','close','settle','change1','change2','volume','open_interest','oi_chg','turnover','final_settle']
 CZCE_COLUMNS_2 = ['pre_settle','open','high','low','close','settle','change1','volume','open_interest','oi_chg','turnover','final_settle']
+
 SHFE_COLUMNS =  {'CLOSEPRICE': 'close',  'HIGHESTPRICE': 'high', 'LOWESTPRICE': 'low', 'OPENINTEREST': 'open_interest', 'OPENPRICE': 'open',  'PRESETTLEMENTPRICE': 'pre_settle', 'SETTLEMENTPRICE': 'settle',  'VOLUME': 'volume'}
 SHFE_VWAP_COLUMNS = {':B1': 'date', 'INSTRUMENTID': 'symbol', 'TIME': 'time_range', 'REFSETTLEMENTPRICE': 'vwap'}
 DCE_COLUMNS = ['open', 'high', 'low', 'close', 'pre_settle', 'settle', 'change1','change2','volume','open_interest','oi_chg','turnover']
 DCE_OPTION_COLUMNS = ['open', 'high', 'low', 'close', 'pre_settle', 'settle', 'change1', 'change2', 'delta', 'volume', 'open_interest', 'oi_chg', 'turnover', 'exercise_volume']
 
+CFFEX_WEEKLY_COLUMNS = ['open','high','low','close','change','open_interest','oi_chg','settle','volume','turnover']
+CZCE_WEEKLY_COLUMNS = ['open','high','low','close','change1','change2','open_interest','oi_chg','settle','volume','turnover']
+SHFE_WEEKLY_COLUMNS = {'CLOSEPRICE':'close', 'HIGHESTPRICE':'high', 'LOWESTPRICE':'low', 'OPENINTEREST':'open_interest', 'OPENPRICE':'open', 'SETTLEMENTPRICE':'settle', 'VOLUME':'volume', 'TURNOVER':'turnover'}
+DCE_WEEKLY_COLUMNS = ['open', 'high', 'low', 'close', 'settle', 'change1','volume','open_interest','oi_chg','turnover']
+
 OUTPUT_COLUMNS = ['symbol', 'date', 'open', 'high', 'low', 'close', 'volume', 'open_interest', 'turnover', 'settle', 'pre_settle', 'variety']
 OPTION_OUTPUT_COLUMNS = ['symbol', 'date', 'open', 'high', 'low', 'close', 'pre_settle', 'settle', 'delta', 'volume', 'open_interest', 'oi_chg', 'turnover', 'implied_volatility', 'exercise_volume', 'variety']
+
+OUTPUT_WEEKLY_COLUMNS = ['symbol', 'date', 'open', 'high', 'low', 'close', 'volume', 'open_interest', 'turnover', 'settle', 'variety']
 
 DCE_MAP =  {
     '豆一': 'A',
