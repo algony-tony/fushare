@@ -160,8 +160,7 @@ def get_czce_daily(date=None):
             html = r.text
         except HTTPError as reason:
             if reason.code != 404:
-                print(cons.CZCE_DAILY_URL % (day.strftime('%Y'),
-                                           day.strftime('%Y%m%d')), reason)
+                print(url, reason)
             return
         if html.find(u'您的访问出错了') >= 0 or html.find(u'无期权每日行情交易记录') >= 0:
             return
@@ -360,7 +359,7 @@ def get_dce_daily(date=None, type="future", retries=0):
                 variety       合约类别
         或 
         DataFrame
-           郑商所每日期权交易数据
+           大商所每日期权交易数据
                 symbol        合约代码
                 date          日期
                 open          开盘价
